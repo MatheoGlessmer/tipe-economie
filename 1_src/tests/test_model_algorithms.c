@@ -2,7 +2,7 @@
 #include "eco_test_utils.h"
 #include "eco_test_weak_symbols.h"
 
-#include "../include/economie_model.h"
+#include "economie_model.h"
 
 static EcoActorSet *fixture_two_actors(void)
 {

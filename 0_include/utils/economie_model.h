@@ -326,6 +326,11 @@ EcoExchangeResult *eco_update_actors_by_exchange(
 
 EcoActorSet *eco_update_actors_by_production(const EcoActorSet *actors);
 
+EcoActorSet *eco_update_actors_global(const EcoActorSet *actors,
+                                      const EcoTactic *tactic,
+                                      EcoWeightFunction weight,
+                                      void *weight_context,
+                                      void *update_context);
 
 EcoMarket *deep_copy(EcoMarket* market);
 

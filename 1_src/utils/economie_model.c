@@ -631,7 +631,27 @@ EcoActorSet *eco_update_actors_by_production(const EcoActorSet *actors) {
     return actors_hat;
 }
 
+EcoActorSet *eco_update_actors_global(const EcoActorSet *actors,
+                                      const EcoTactic *tactic,
+                                      EcoWeightFunction weight,
+                                      void *weight_context,
+                                      void *update_context)
+{
+    (void)update_context;
+    if (actors == NULL || tactic == NULL || weight == NULL) {
+        return NULL;
+    }
 
+    EcoPriceMatrix prices = eco_price_matrix_before_negotiation(actors, tactic);
+    EcoPriceMatrix negotiated = eco_price_matrix_after_negotiation(actors, prices, weight, weight_context);
+    EcoExchangeResult *exchanged = eco_update_actors_by_exchange(actors, tactic, negotiated);
+    EcoActorSet *result = eco_update_actors_by_production(exchanged->updated_actors);
+
+    eco_exchange_result_destroy(exchanged);
+    eco_matrix_destroy(negotiated);
+    eco_matrix_destroy(prices);
+    return result;
+}
 
 EcoMarket *deep_copy(EcoMarket* market) {
     if (market == NULL) return NULL;
