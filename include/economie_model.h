@@ -212,7 +212,8 @@ typedef EcoTactic *(*EcoStrategyGenerator)(EcoStep step,
 
 typedef struct EcoStrategy {
     EcoIndex tactic_count;
-    EcoTactic **tactics;              /* tactiques[1..tactic_count] si suite finie */
+    EcoIndex tactic_id;
+    EcoTactic **tactics;              /* tactiques[1..tactic_count]  */
     EcoStrategyGenerator generator;   /* optionnel */
     void *generator_context;
 } EcoStrategy;
@@ -250,8 +251,7 @@ typedef struct EcoStateSequence {
     EcoIndex state_count;
     EcoActorSet **states; /* states[1..state_count] */
 } EcoStateSequence;
-
-/* ------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------ */
 /* Signatures optionnelles pour les futures implémentations                  */
 /* ------------------------------------------------------------------------- */
 
@@ -326,11 +326,7 @@ EcoExchangeResult *eco_update_actors_by_exchange(
 
 EcoActorSet *eco_update_actors_by_production(const EcoActorSet *actors);
 
-EcoActorSet *eco_update_actors_global(const EcoActorSet *actors,
-                                      const EcoTactic *tactic,
-                                      EcoWeightFunction weight,
-                                      void *weight_context,
-                                      void *update_context);
 
+EcoMarket *deep_copy(EcoMarket* market);
 
 #endif /* ECONOMIE_MODEL_H */
