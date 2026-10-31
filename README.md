@@ -80,7 +80,10 @@ parties sont d'accord**, puis production maximale avec les ressources obtenues.
   identifiants dans le fichier.
 - **Jacobien** (`jacobien`) : conversion de l'état d'un marché en vecteur et
   calcul du jacobien d'une étape avec un pas `step`. `[à compléter]`
-- **Analyse de matrices** (`matrix_analysis`) : `[à compléter : ce que calcule ce module]`
+- **Analyse de matrices** (`matrix_analysis`) : outil séparé de la simulation, qui lit
+  une matrice `.mat` produite par le programme et calcule ses valeurs propres avec
+  LAPACK (`LAPACKE_dgeev`), pour juger de la stabilité locale du système
+  `[à confirmer]`.
 - **Affichage** configurable (`economie_display`) : décimales, indices, noms
   d'acteurs et de ressources.
 - Opérations sur les vecteurs (`ecovect_operation`) : somme, différence,
@@ -102,11 +105,13 @@ parties sont d'accord**, puis production maximale avec les ressources obtenues.
 
 ## Compilation et exécution
 
-Prérequis : `gcc` (ou `clang`) et `make`.
+Prérequis : `gcc` (ou `clang`) et `make` ; pour l'outil d'analyse,
+LAPACKE (`sudo apt install liblapacke-dev` sous Debian/Ubuntu).
 
 ```bash
 make run          # compile et lance la suite de tests
-make              # [à compléter : cible qui compile le programme de simulation]
+make              # compile le programme de simulation (build/simulation)
+make analysis     # compile l'outil d'analyse des matrices (build/matrix_analysis)
 ```
 
 ## Tests
@@ -146,3 +151,4 @@ Pistes et points restants :
 
 Mathéo Glessmer, élève-ingénieur à l'ENSIIE (filière HPC).
 
+Licence : tous droit réservé

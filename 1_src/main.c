@@ -3,11 +3,11 @@
 #include <assert.h>
 #include <stdbool.h>
 
-#include "../include/economie_model.h"
-#include "../include/economie_serialize.h"
-#include "../include/economie_display.h"
-#include "../include/market.h"
-#include "../include/jacobien.h"
+#include "economie_model.h"
+#include "economie_serialize.h"
+#include "economie_display.h"
+#include "market.h"
+#include "jacobien.h"
 
 int main(int argc, char** argv) {
     // 1. Vérification des arguments

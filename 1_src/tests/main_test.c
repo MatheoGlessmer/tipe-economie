@@ -1,7 +1,7 @@
 #include "eco_test_framework.h"
-#include "../src/eco_test_utils.h"
-#include "../include/economie_model.h"
-#include "../include/economie_display.h"
+#include "eco_test_utils.h"
+#include "economie_model.h"
+#include "economie_display.h"
 
 #include <stdbool.h>
 #include <string.h>

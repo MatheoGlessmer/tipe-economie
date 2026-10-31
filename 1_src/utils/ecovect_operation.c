@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <assert.h>
-#include "../include/ecovect_operation.h"
-#include "../include/economie_model.h"
+#include "ecovect_operation.h"
+#include "economie_model.h"
 
 // -----------------------------------------------------------------------------
 // Addition de deux vecteurs

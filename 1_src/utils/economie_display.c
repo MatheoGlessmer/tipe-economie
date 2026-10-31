@@ -4,8 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "../include/economie_display.h"
-#include "../include/economie_model.h"
+#include "economie_display.h"
+#include "economie_model.h"
 
 /*
  * Permet de donner un nom lisible à une ressource.

@@ -1,8 +1,8 @@
-#include "../include/economie_model.h"
-#include "../include/economie_display.h"
-#include "../include/economie_serialize.h"
-#include "../include/market.h"
-#include "../include/ecovect_operation.h"
+#include "economie_model.h"
+#include "economie_display.h"
+#include "economie_serialize.h"
+#include "market.h"
+#include "ecovect_operation.h"
 #include <stdlib.h>
 
 EcoVector market_to_vect(EcoMarket* market) {
@@ -27,7 +27,7 @@ EcoMatrix jacobien(EcoMarket* market, EcoReal step) {
     EcoIndex m = market->initial_actors->actors[1]->resources[0];
     EcoIndex total_dim = n * m;
 
-    EcoMarket *market_plus, *market_minus;
+    EcoMarket *market_plus;
 
     EcoVector neg_vector;
     EcoVector pos_vector;

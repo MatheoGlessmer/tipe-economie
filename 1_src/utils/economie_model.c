@@ -3,8 +3,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "../include/economie_model.h"
-#include "../include/economie_display.h"
+#include "economie_model.h"
+#include "economie_display.h"
 
 #define LLONG_MAX 9223372036854775807
 /*

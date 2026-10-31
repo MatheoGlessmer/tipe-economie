@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include "../include/economie_serialize.h"
-#include "../include/economie_model.h"
-#include "../include/market.h"
+#include "economie_serialize.h"
+#include "economie_model.h"
+#include "market.h"
 
 
 /* ========================================================================= */
